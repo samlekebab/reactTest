@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <iostream>
-#ifdef __unix__
+//#ifdef __unix__
 #include <time.h>
-#endif
+//#endif
 #include <cmath>
 #include <list>
 #include <thread>
@@ -17,7 +17,7 @@ int main(void){
 	list<long> maxs {};
 	while(d<40){
 		sum++;
-#ifdef __unix__
+//#ifdef __unix__
 		clock_gettime(CLOCK_MONOTONIC_RAW,&time);
 		long newTimer = (long)time.tv_sec*1'000'000 + time.tv_nsec/1000 ;
 		sum+=newTimer;
@@ -32,7 +32,7 @@ int main(void){
 		}
 		localMax=(localMax>newTimer-timer)?localMax:newTimer-timer;
 		timer=newTimer;
-#endif
+//#endif
 
 
 	
